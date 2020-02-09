@@ -8,6 +8,6 @@ public class Main {
         int age = scanner.nextInt();
         int age1 = scanner.nextInt();
         int age2 = scanner.nextInt();
-        System.out.println(age +""+ age1+"" +age2);
+        System.out.println(age +" "+ age1+" " +age2);
     }
 }
