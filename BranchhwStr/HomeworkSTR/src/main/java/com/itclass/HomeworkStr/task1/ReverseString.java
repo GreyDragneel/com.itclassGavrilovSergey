@@ -11,9 +11,9 @@ public class ReverseString {
         System.out.println(reverseString(string));
     }
 
-    public static StringBuffer reverseString(String string){
-        StringBuffer strBuffer = new StringBuffer(string);
-        strBuffer.reverse();
-        return strBuffer;
+    public static StringBuilder reverseString(String string){
+        StringBuilder strBuilder = new StringBuilder(string);
+        strBuilder.reverse();
+        return strBuilder;
     }
 }

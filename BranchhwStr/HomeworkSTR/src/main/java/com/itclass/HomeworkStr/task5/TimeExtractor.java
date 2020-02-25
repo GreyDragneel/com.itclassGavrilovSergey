@@ -6,13 +6,13 @@ import java.util.regex.Pattern;
 
 public class TimeExtractor {
 
-    static final String regex = "[0-2][0-9]:[0-5][0-9]";
+    static final String REGEX = "[0-2][0-9]:[0-5][0-9]";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Insert a string");
         String string = scanner.nextLine();
-        Pattern pattern  = Pattern.compile(regex);
+        Pattern pattern  = Pattern.compile(REGEX);
         Matcher matcher = pattern.matcher(string);
         if (matcher.find()) {
             System.out.println(matcher.group());

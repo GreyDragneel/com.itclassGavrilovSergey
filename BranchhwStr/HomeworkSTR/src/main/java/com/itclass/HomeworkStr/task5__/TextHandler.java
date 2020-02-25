@@ -8,16 +8,16 @@ public class TextHandler {
     private Pattern pattern;
     private Matcher matcher;
     private final String endOfSentenceRegex = "(\\.|\\!|\\?)\\s(-*)";
-    private final String countPunctuationRegex = "(\\.|\\!|\\?|\\:|\\,|\\-)\\s(-*)";
-    private final String countSentencesRegex = "([А-ЯA-Z]((т.п.|т.д.|пр.)|[^?!.\\(]|\\([^\\)]*\\))*[.?!])";
+    private final String COUNT_PUNCTUATION_REGEX = "(\\.|\\!|\\?|\\:|\\,|\\-)\\s(-*)";
+    private final String COUNT_SENTENCES_REGEX = "([А-ЯA-Z]((т.п.|т.д.|пр.)|[^?!.\\(]|\\([^\\)]*\\))*[.?!])";
 
-    public String toUpperCase (String text) {
+    public String toUpperCase(String text) {
         pattern = Pattern.compile(endOfSentenceRegex);
         matcher = pattern.matcher(text);
         char[] textArray = text.toCharArray();
         textArray[0] = Character.toUpperCase(textArray[0]);
         int offset;
-        while(matcher.find()) {
+        while (matcher.find()) {
             offset = matcher.end();
             textArray[offset] = Character.toUpperCase(textArray[offset]);
         }
@@ -26,9 +26,9 @@ public class TextHandler {
 
     public int count(String text, String regex) {
         int amount = 0;
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(text);
-        while(matcher.find()) {
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(text);
+        while (matcher.find()) {
             amount++;
         }
         return amount;

@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args) {
         int key;
-        final String numberRegex = "\\d";
-        final String countPunctuationRegex = "";
-        final String countSentencesRegex = "";
-        String text = null;
+        final String NUMBER_REGEX = "\\d";
+        final String COUNT_PUNCTUATION_REGEX = "";
+        final String COUNT_SENTENCES_REGEX = "";
+        String text = "";
         TextHandler handler = new TextHandler();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Menu:\n"
@@ -32,16 +32,16 @@ public class Main {
                     System.out.println(handler.toUpperCase(text));
                     break;
                 case(3):
-                    System.out.println("There are " + handler.count(text, numberRegex) + " numbers");
+                    System.out.println("There are " + handler.count(text, NUMBER_REGEX) + " numbers");
                     break;
                 case(4):
-                    System.out.println("There are " + handler.count(text, countPunctuationRegex) +
+                    System.out.println("There are " + handler.count(text, COUNT_PUNCTUATION_REGEX) +
                             " punctuation marks");
                     break;
                 case(5):
-                    System.out.println("There are " + handler.count(text, countSentencesRegex) + " sentences");
+                    System.out.println("There are " + handler.count(text, COUNT_SENTENCES_REGEX) + " sentences");
             }
-        } while (key > 0 & key < 6);
+        } while (key > 0 || key < 6);
         System.out.println("Exiting...");
         scanner.close();
         System.out.println("Done");

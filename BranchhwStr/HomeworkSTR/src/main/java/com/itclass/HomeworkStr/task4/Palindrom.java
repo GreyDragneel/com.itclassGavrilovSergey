@@ -8,8 +8,8 @@ public class Palindrom {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a string");
         String string = scanner.nextLine();
-        StringBuffer buffer = new StringBuffer(string);
-        String revertedStr = buffer.reverse().toString();
+        StringBuilder builder = new StringBuilder(string);
+        String revertedStr = builder.reverse().toString();
         string = string.replace(" ", "");
         revertedStr = revertedStr.replace(" ", "");
         if (string.equals(revertedStr)) {
