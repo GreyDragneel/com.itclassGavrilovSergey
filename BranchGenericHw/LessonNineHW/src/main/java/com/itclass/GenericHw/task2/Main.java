@@ -10,7 +10,7 @@ public class Main {
 
         System.out.println("Введите размер массива");
         int arrSize = scanner.nextInt();
-        int key;
+
 
     }
 }
